@@ -1,0 +1,21 @@
+#define _CRT_SECURE_NO_WARNINGS
+
+#include <stdio.h>
+
+void printCube(int a);
+
+int main(void)
+{
+int a = 3;
+printf("Main: a = %2d \n", a);
+printCube(a);
+printf("Main: a = %2d \n", a);
+getchar();
+return 0;
+}
+
+void printCube(int a)
+{
+a = a * a * a;
+printf("Cube: a = %2d \n", a);
+}
