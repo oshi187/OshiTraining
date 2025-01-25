@@ -2,7 +2,7 @@
 Name - Oshini Vidhara Jayaweera
 Module - Software Construction 1 (C programming)
 
-Description - This program approximate the roots of the function f(x) using the bisection method
+Description - This program approximates the roots of the function f(x) using the bisection method
 */
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
