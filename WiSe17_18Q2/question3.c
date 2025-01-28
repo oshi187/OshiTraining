@@ -23,11 +23,11 @@ int main()
 {
 	int m = 0;
 	int n = 0;
-	int *divisors;
+	int* divisors;
 	int gcd = 0;
 
 	printf("Enter two positive integer numbers (comma-seperated): ");
-	while ((scanf("%d,%d", &m, &n) != 2 )|| m <= 0 || n <= 0)
+	while ((scanf("%d,%d", &m, &n) != 2) || m <= 0 || n <= 0)  //checking successful assignement
 	{
 		printf("\nInvalid input. Retry: ");
 		clearInputbuffer();
@@ -36,20 +36,20 @@ int main()
 
 	divisors = newArrayOfDivisors(m);
 	printf("Divisors of %d: ", m);
-	for (int i = 0; i < getNumberOfDivisors(m); i++)
+	for (int i = 0; i < getNumberOfDivisors(m); i++) // printing the divisors of the first input number
 	{
 		printf("%d ", *(divisors + i));
 	}
 
 	gcd = greatestCommonDivisor(m, n);
-	printf("\nGreatest common divisor: gcd(%d, %d) = %d\n", m, n, gcd);
+	printf("\nGreatest common divisor: gcd(%d, %d) = %d\n", m, n, gcd);//printing gcd of the two integer inputs from user
 
 	free(divisors);
-	sortDescending(&m, &n);
 	getchar();
 	return 0;
 }
 
+/*Clear input buffer*/
 void clearInputbuffer(void)
 {
 	while (getchar() != '\n')
@@ -64,10 +64,10 @@ void sortDescending(int* a, int* b)
 	{
 		*a = *b;
 		*b = swap;
-		
 	}
 }
 
+/*Calculating the gcd of two user inputs*/
 int greatestCommonDivisor(int m, int n)
 {
 	int remainder;
@@ -79,11 +79,12 @@ int greatestCommonDivisor(int m, int n)
 	return n;
 }
 
+/*get a count of the divisors for the first number */
 int getNumberOfDivisors(int m)
 {
 	int divisor = 1; //1 is already a divisor
 
-	for (int i = 2; i <= m/2; i++)
+	for (int i = 2; i <= m / 2; i++)
 	{
 		if (m % i == 0)
 			divisor++;
@@ -91,11 +92,12 @@ int getNumberOfDivisors(int m)
 	return divisor;
 }
 
+/*allocate memory for the divisors and assign them to the block of memory allocated*/
 int* newArrayOfDivisors(int m)
 {
 	int* ptr;
 	int divisor = getNumberOfDivisors(m);
-	
+
 	ptr = (int*)malloc(divisor * sizeof(int));
 	if (ptr == NULL)
 		exit(EXIT_FAILURE);
