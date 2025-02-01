@@ -21,7 +21,8 @@ void transposeMatrix(int *);
 int main(void)
 {
 	int matrix[] = { 1,2,3,4,5,6,7,8,9,10,11,12 };
-
+        
+	//printing original matrix
 	printf("Original matrix\n\n");
 	for (int i = 0; i < ROWS; i++)
 	{
@@ -37,8 +38,9 @@ int main(void)
 }
 
 void transposeMatrix(int* matrix)
-{
-	int matrixT[ROWS][COLUMNS];
+{      
+	//converting given 1D array to 2d array
+	int matrixT[ROWS][COLUMNS];  
 	for (int i = 0; i < ROWS; i++)
 	{
 		for (int j = 0; j < COLUMNS; j++)
@@ -46,7 +48,7 @@ void transposeMatrix(int* matrix)
 			matrixT[i][j] = matrix[i * COLUMNS + j];
 		}
 	}
-
+        //printing transposed matrix (have to swap rows and columns in the conditions
 	printf("\nTransposed Matrix\n\n");
 	for (int i = 0; i < COLUMNS; i++)
 	{
