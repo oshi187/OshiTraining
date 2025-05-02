@@ -51,7 +51,7 @@ sElement* enqueue(sElement* head) {
 	free(newStudent);
 
 	if (head == NULL) {
-		// Queue is empty — this becomes the first element
+		// Queue is empty â€” this becomes the first element
 		return newElement;
 	}
 	else {
